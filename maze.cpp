@@ -29,3 +29,25 @@ bool warren::get_wall(bool* w, bool* e, bool* s, bool* n){
 bool warren::get_visited(bool* v){
   visited = *v;
 }
+
+int right(int index, int base){
+  if((index-1)<(base*base))
+    index++;
+  return index;
+}
+
+int left(int index, int base){
+  if((index-1)>0)
+    index=index-1;
+  return index;
+}
+
+int up(int index, int base){
+  index=index+base;
+  return base;
+}
+
+int down(int index, int base){
+  index=index+base;
+  return base;
+}
