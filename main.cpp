@@ -5,20 +5,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-  /*warren cell[10][10];
-  /*if (argc > 1 && std::string(argv[1]) == "-xterm")
-  {
-    if (::execl("/usr/bin/xterm", "xterm", "-e", argv[0], (char*)NULL))
-    {
-      std::perror("execl");
-      return 1;
-    }
-  }for( int i=0; i<10; i++){
-      for( int j=0; j < 10; j++ ){
-        cell[i][j].warren();
-      }
-    }
-    bool west;
+  /*bool west;
     bool east;
     bool south;
     bool north;
@@ -30,7 +17,9 @@ int main(int argc, char** argv)
     std::cin >> y;
     cell[x][y].get_wall(&west,&east,&south,&north);
     cout<<west<<east<<south<<north;*/
-    std::vector<warren> cell(100);
-    std::cout << cell[0] << '\n';
+    std::vector<warren> cell(1);
+    vector <int> cella(1);
+    cin>>cella[0];
+    cell[0].set_wall(cella[0],false,false,false)
     cin.ignore();
 }
