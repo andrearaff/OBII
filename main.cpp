@@ -3,23 +3,18 @@
 #include <vector>
 using namespace std;
 
-int main(int argc, char** argv)
+int main()
 {
-  /*bool west;
-    bool east;
-    bool south;
-    bool north;
-    bool vis;
-    int x;
-    int y;
-    std::cout << "Metti Valori\n";
-    std::cin>>x;
-    std::cin >> y;
-    cell[x][y].get_wall(&west,&east,&south,&north);
-    cout<<west<<east<<south<<north;*/
-    std::vector<warren> cell(1);
-    vector <int> cella(1);
-    cin>>cella[0];
-    cell[0].set_wall(cella[0],false,false,false)
-    cin.ignore();
+    vector<int> primo(1);
+    vector<int> secondo(5);
+    vector<vector<int>> M;
+    secondo[0] = -5;
+    secondo[4] = 23;
+    M.resize(1);
+    M[0] = secondo;
+    cout << M[0][0] << endl;
+    for(int i = 0; i < 5; i++)
+      cout << M[0][i] << endl;
+
+    return 0;
 }
