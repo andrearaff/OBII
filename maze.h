@@ -18,10 +18,10 @@ public:
   void get_wall(bool* w, bool* e, bool* s, bool* n);
   void get_visited( bool* v);
 };
-//venga definito un array di modulo "b*b" e di indice "i"
-int right(int index,int base);
-int left(int index,int base);
-int up(int index, int base);
-int down(int index, int base);
+//
+void right(uint8_t* righe,uint8_t* colonne);
+void left(uint8_t* righe,uint8_t* colonne);
+void up(uint8_t* righe,uint8_t* colonne);
+void down(uint8_t* righe,uint8_t* colonne);
 
 #endif
