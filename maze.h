@@ -13,10 +13,10 @@ private:
 public:
   warren();
  ~warren();
-  bool set_wall( bool w, bool e, bool s, bool n);
-  bool set_visited(bool v);
-  bool get_wall(bool* w, bool* e, bool* s, bool* n);
-  bool get_visited( bool* v);
+  void set_wall( bool w, bool e, bool s, bool n);
+  void set_visited(bool v);
+  void get_wall(bool* w, bool* e, bool* s, bool* n);
+  void get_visited( bool* v);
 };
 //venga definito un array di modulo "b*b" e di indice "i"
 int right(int index,int base);

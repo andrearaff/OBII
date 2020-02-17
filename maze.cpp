@@ -1,4 +1,5 @@
 #include "maze.h"
+#include <stdint.h>        
 warren::warren(){
     west_wall  = 0;
     east_wall  = 0;
@@ -8,47 +9,42 @@ warren::warren(){
 warren::~warren(){
 }
 
-bool warren::set_wall(bool w,bool e, bool s, bool n ){
+void warren::set_wall(bool w,bool e, bool s, bool n ){
   west_wall  = w;
   east_wall  = e;
   south_wall = s;
   north_wall = n;
 }
 
-bool warren::set_visited(bool v){
+void warren::set_visited(bool v){
   visited = v;
 }
 
-bool warren::get_wall(bool* w, bool* e, bool* s, bool* n){
+void warren::get_wall(bool* w, bool* e, bool* s, bool* n){
   west_wall  = *w;
   east_wall  = *e;
   south_wall = *s;
   north_wall = *n;
 }
 
-bool warren::get_visited(bool* v){
+void warren::get_visited(bool* v){
   visited = *v;
 }
-/*
-int right(int index, int base){
-  if((index-1)<(base*base))
-    index++;
-  return index;
+
+void right(uint8_t* righe,uint8_t* colonne){
+  colonne++;
 }
 
-int left(int index, int base){
-  if((index-1)>0)
-    index=index-1;
-  return index;
+ void left(uint8_t* righe,uint8_t* colonne){
+  colonne--;
 }
 
-int up(int index, int base){
-  index=index+base;
-  return base;
+void up(uint8_t* righe,uint8_t* colonne){
+  righe++;
 }
 
-int down(int index, int base){
-  index=index+base;
-  return base;
+void down(uint8_t* righe,uint8_t* colonne){
+  righe--;
 }
-*/
+
+
