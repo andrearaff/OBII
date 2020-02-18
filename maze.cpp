@@ -1,5 +1,5 @@
 #include "maze.h"
-#include <stdint.h>        
+#include <stdint.h>
 warren::warren(){
     west_wall  = 0;
     east_wall  = 0;
@@ -30,7 +30,6 @@ void warren::get_wall(bool* w, bool* e, bool* s, bool* n){
 void warren::get_visited(bool* v){
   visited = *v;
 }
-
 void right(uint8_t* righe,uint8_t* colonne){
   colonne++;
 }
@@ -47,4 +46,18 @@ void down(uint8_t* righe,uint8_t* colonne){
   righe--;
 }
 
-
+void logic( warren cella, uint8_t** righe, uint8_t** colonne){
+  bool west;
+  bool east;
+  bool north;
+  bool south;
+  cella.get_wall(&west,&east,&north,&south);
+  if(north==0)
+    up(&righe, &colonne);
+  else if(east==0)
+    right(&righe, &colonne);
+  else if(south==0)
+    down(&righe, &colonne);
+  else if(west==0)
+    left(&righe, &colonne);
+}
