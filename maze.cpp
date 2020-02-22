@@ -21,14 +21,14 @@ void warren::set_visited(bool v){
 }
 
 void warren::get_wall(bool* w, bool* e, bool* s, bool* n){
-  west_wall  = *w;
-  east_wall  = *e;
-  south_wall = *s;
-  north_wall = *n;
+  *w = west_wall;
+  *e = east_wall;
+  *s = south_wall;
+  *n = north_wall;
 }
 
 void warren::get_visited(bool* v){
-  visited = *v;
+  *v = visited;
 }
 void right(uint8_t* righe,uint8_t* colonne){
   colonne++;
@@ -39,25 +39,25 @@ void right(uint8_t* righe,uint8_t* colonne){
 }
 
 void up(uint8_t* righe,uint8_t* colonne){
-  righe++;
-}
-
-void down(uint8_t* righe,uint8_t* colonne){
   righe--;
 }
 
-void logic( warren cella, uint8_t** righe, uint8_t** colonne){
+void down(uint8_t* righe,uint8_t* colonne){
+  righe++;
+}
+
+void logic( warren cella, uint8_t* righe, uint8_t* colonne){
   bool west;
   bool east;
   bool north;
   bool south;
   cella.get_wall(&west,&east,&north,&south);
   if(north==0)
-    up(&righe, &colonne);
+    up(righe, colonne);
   else if(east==0)
-    right(&righe, &colonne);
+    right(righe,colonne);
   else if(south==0)
-    down(&righe, &colonne);
+    down(righe,colonne);
   else if(west==0)
-    left(&righe, &colonne);
+    left(righe,colonne);
 }
